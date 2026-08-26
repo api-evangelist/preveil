@@ -1,0 +1,85 @@
+generated: '2026-08-26'
+method: searched
+source: https://www.preveil.com/new-pricing-page/
+currency: USD
+plan_count: 5
+note: >-
+  Plans are for the PreVeil product (seats, storage, compliance tier), not for
+  API consumption — PreVeil publishes no public API and therefore no API usage
+  pricing, quotas or overage rates.
+plans:
+- name: Basic
+  price: 0
+  currency: USD
+  billing_period: month
+  audience: Individuals sharing encrypted email and files
+  storage: 5 GB
+  included:
+  - end-to-end encryption
+  - data restoration
+  - no passwords
+  - integrations
+  - mobile access
+  overage: null
+- name: Individual
+  price: 25
+  currency: USD
+  billing_period: month
+  billing_note: annual payment required
+  storage: 5 TB
+  included:
+  - everything in Basic
+  - free third-party accounts
+  overage: null
+- name: Business
+  price: 30
+  currency: USD
+  billing_period: month
+  price_unit: per user
+  billing_note: >-
+    3-9 users require a 24-month minimum; 10+ users require a 12-month minimum;
+    monthly billing available
+  storage: 10 TB
+  included:
+  - everything in Individual
+  - compliance support (HIPAA, FERPA, SOC 2, GLB, FTC, IRS)
+  - admin console
+  - system logs
+  - data loss prevention
+  - Approval Groups
+  - priority support
+  - dedicated success team
+  overage: null
+- name: Gov Community
+  price: null
+  price_note: custom — contact sales
+  currency: USD
+  billing_period: null
+  audience: >-
+    Defense industrial base organizations meeting CMMC, DFARS 252.204-7012 and
+    ITAR obligations
+  storage: 10 TB
+  included:
+  - everything in Business
+  - FedRAMP Moderate equivalent
+  - FIPS 140-3 validated encryption
+  - AWS GovCloud hosting
+  - Compliance Accelerator
+  - compliance expert access
+  overage: null
+- name: PreVeil Pass
+  price: 450
+  currency: USD
+  billing_period: month
+  audience: Small and mid-sized defense suppliers pursuing CMMC certification
+  included:
+  - 3 Gov Community licenses
+  - Compliance Accelerator
+  - one-to-one compliance support
+  overage: null
+evidence:
+- url: https://www.preveil.com/new-pricing-page/
+  status: 200
+- url: https://www.preveil.com/pricing/
+  status: 301
+  note: redirects to /new-pricing-page/

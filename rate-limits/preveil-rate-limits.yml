@@ -1,0 +1,23 @@
+generated: '2026-08-26'
+method: searched
+source: https://preveil.atlassian.net/wiki/spaces/ESD/overview
+limit_count: 0
+note: >-
+  No published rate limits, and none expected: PreVeil has no public API to
+  limit. The only documented quantitative limits are per-plan storage quotas
+  (5 GB Basic, 5 TB Individual, 10 TB Business and Gov Community), which are
+  recorded in plans/preveil-plans-pricing.yml rather than here. One access
+  control that is documented is IP allow-listing — an organization can restrict
+  which IP addresses may reach PreVeil, and a blocked address gets an
+  "<IP address> not permitted to access PreVeil" error — but that is a policy
+  gate, not a rate limit. No X-RateLimit-*, RateLimit-* or Retry-After header
+  practice is published.
+rate_limits: []
+response_headers: []
+exhaustion_status: null
+evidence:
+- url: https://preveil.atlassian.net/wiki/rest/api/search?cql=space=ESD%20and%20text~%22API%22
+  status: 200
+  note: One hit, and it is an Android API-level requirement, not an HTTP API.
+- url: https://preveil.atlassian.net/wiki/spaces/ESD/pages/4338417704/Error+IP+address+not+permitted+to+access+PreVeil
+  status: 200

@@ -1,0 +1,72 @@
+# PreVeil
+
+> PreVeil is an end-to-end encrypted email and file-sharing platform for organizations that must
+> protect Controlled Unclassified Information (CUI) and meet CMMC 2.0 Level 2, DFARS 252.204-7012,
+> ITAR, NIST SP 800-171, HIPAA and GDPR obligations. Content is encrypted on the endpoint with
+> per-user keys the service never holds, privileged administrative actions require multi-party
+> cryptographic consent through Approval Groups, and there are no passwords.
+
+## Important for agents
+
+PreVeil publishes **no public developer API**. There is no OpenAPI or AsyncAPI definition, no GraphQL
+endpoint, no MCP server, no A2A agent card, no OAuth or OpenID Connect discovery document, no SDK on
+any package registry, and no developer portal. Probes on 2026-08-26 of `www.preveil.com`,
+`web.preveil.com`, `collections.preveil.com` and `status.preveil.com` found no machine-readable API
+contract. `web.preveil.com` answers 200 with an HTML application shell for every path, including
+`/openapi.json` and `/.well-known/agent-card.json`; those are not documents.
+
+PreVeil's two documented programmatic surfaces are:
+
+1. The **PreVeil Drive Upload CLI**, bundled with the desktop client, which talks to the locally
+   installed PreVeil drive daemon on the same machine — not to a network API.
+2. The **PreVeil SIEM Connector**, a licensed Docker/VM appliance that exports organization activity
+   logs in syslog format to an external SIEM. It requires a license and hosting agreement.
+
+Anything presented as a "PreVeil REST API" is not something PreVeil publishes.
+
+## Products
+
+- [PreVeil Drive](https://www.preveil.com/preveil-drive/): Encrypted file sharing and sync via Windows Explorer, Mac Finder or browser, with Cloud Lock, Selective Sync, Watch Folders, expiring shares and revocable access.
+- [PreVeil Email](https://www.preveil.com/preveil-email/): End-to-end encrypted mail layered onto existing Outlook, Apple Mail and Gmail clients, with keyword Auto-Encrypt (CUI, ITAR, FCI, ENCRYPT) and Email Relay to non-PreVeil recipients including GCC High.
+- [Admin Console](https://www.preveil.com/admin-features/): User and device management, organization policy rules, tamper-proof activity logs, e-discovery and Approval Groups.
+- [PreVeil Express](https://www.preveil.com/): Free browser-based account for light external collaboration, no client install.
+- [Compliance Accelerator and GRC](https://www.preveil.com/grc/): Pre-filled CMMC / NIST 800-171 documentation, evidence collection, SSP and POA&M generation.
+- [PreVeil Pass](https://www.preveil.com/preveil-pass/): Packaged CMMC compliance offering for small and mid-sized defense suppliers.
+
+## Command line
+
+- [PreVeil Drive Upload CLI](https://preveil.atlassian.net/wiki/spaces/ESD/pages/2875490305/PreVeil+Drive+Upload+Command+Line+Interface+CLI+Tool): `preveil_client.exe` on Windows (C:\PreVeil\filesync), `client` on macOS (/Applications/PreVeil/filesync). One command, `upload`, with flags `-u/--user` (required), `-s/--source` (required), `-d/--dest`, `-c/--create`, `--localsync`, `--quiet`, `--skipverify`, `--verbose`; global flags `--logdir`, `--mode`, `--port`.
+
+## Documentation and support
+
+- [PreVeil Knowledge Base](https://preveil.atlassian.net/wiki/spaces/ESD/overview): Installation, administration, release notes and troubleshooting. The Confluence REST API at `/wiki/rest/api/` answers anonymously for this space.
+- [Support](https://www.preveil.com/support-page/): Support landing page.
+- [Service Desk](https://servicedesk.preveil.com/servicedesk/customer/portals): Ticketed customer support portal.
+- [Install latest release](https://www.preveil.com/install-latest-release/): Desktop and mobile client downloads.
+
+## Operations
+
+- [Status page](https://status.preveil.com/): Atlassian Statuspage covering Backend, Mail, Drive, Admin Console, Web PreVeil, Desktop PreVeil, mobile apps, the Outlook add-in and the Gmail plugin. Machine-readable at `https://status.preveil.com/api/v2/summary.json` (Statuspage's own API, not PreVeil's).
+- [Service Level Agreement](https://www.preveil.com/sla/): 99.95% monthly availability, tiered service credits to 50%, Sev 1 response in 1 hour.
+- [Vulnerability Disclosure Policy](https://www.preveil.com/vulnerability-disclosure-policy/): Reports to security@preveil.com, acknowledgement in 3 business days, remediation within 180 days, safe harbor for compliant research. No bug bounty.
+
+## Commercial
+
+- [Pricing](https://www.preveil.com/new-pricing-page/): Basic free (5 GB), Individual $25/month (5 TB), Business $30/user/month (10 TB), Gov Community custom, PreVeil Pass $450/month.
+- [Create account](https://www.preveil.com/createaccount/)
+- [Enterprise Terms of Use](https://www.preveil.com/terms-of-use/)
+- [Privacy Policy](https://www.preveil.com/privacy-policy/)
+- [Data Processing Addendum](https://www.preveil.com/dpa/)
+- [Legal index](https://www.preveil.com/legal/)
+
+## Code
+
+- [github.com/PreVeil](https://github.com/PreVeil): 46 repositories. All but `pvHelpers` are forks of third-party dependencies vendored for PreVeil's own build. `pvHelpers` is an internal Python helper module for the PreVeil daemon, distributed as a source tarball and not published to PyPI.
+
+## Optional
+
+- [Compliance: CMMC](https://www.preveil.com/cmmc-compliance/)
+- [Compliance: ITAR](https://www.preveil.com/itar-compliance/)
+- [SIEM Connector](https://www.preveil.com/resources/preveil-siem-connector/)
+- [Security overview](https://www.preveil.com/preveil-security/)
+- [Resources and blog](https://www.preveil.com/resources/)

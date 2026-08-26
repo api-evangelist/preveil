@@ -1,0 +1,111 @@
+generated: '2026-08-26'
+method: probed
+source: live GET probes of every PreVeil host resolved from apis.yml and DNS
+note: >-
+  Every /.well-known/ path probed on PreVeil's hosts either 404s or returns an
+  SPA/HTML shell. status.preveil.com does serve a real security.txt, but it is
+  Atlassian's (Canonical www.atlassian.com, contact security@atlassian.com) and
+  belongs to the hosted Statuspage product, not to PreVeil. No WellKnown or
+  SecurityTxt pointer is emitted from this file — it records an absence.
+hosts:
+- host: www.preveil.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  - path: /llms.txt
+    status: 404
+    file: null
+- host: web.preveil.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+    note: >-
+      HTML SPA shell, not a document. This host is a single-page application
+      whose catch-all route answers 200 with the app index for every path,
+      including /openapi.json and /graphql. Treated as a miss.
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: null
+    note: SPA shell, not a document.
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: null
+    note: SPA shell, not a document.
+  - path: /.well-known/api-catalog
+    status: 200
+    file: null
+    note: SPA shell, not a document.
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    file: null
+    note: SPA shell, not a document.
+  - path: /.well-known/agent-card.json
+    status: 200
+    file: null
+    note: SPA shell, not an AgentCard. No JSON object, no AgentCard fields.
+  - path: /.well-known/agent.json
+    status: 200
+    file: null
+    note: SPA shell, not an AgentCard.
+- host: collections.preveil.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  - path: /
+    status: 200
+    file: null
+    note: 'Returns the bare string "pong" — a backend health check, not a document.'
+- host: status.preveil.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+    note: >-
+      Atlassian's security.txt, served by the hosted Statuspage product.
+      Canonical https://www.atlassian.com/.well-known/security.txt, contact
+      security@atlassian.com. NOT PreVeil's — recorded as a miss.
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null

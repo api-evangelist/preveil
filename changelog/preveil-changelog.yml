@@ -1,0 +1,66 @@
+generated: '2026-08-26'
+method: searched
+source: https://preveil.atlassian.net/wiki/spaces/ESD/overview
+name: PreVeil client release notes
+note: >-
+  PreVeil publishes release notes per client build in its Confluence knowledge
+  base — one page per desktop version, dated by page creation. There is no API
+  changelog because there is no public API. Dates below are the Confluence page
+  creation dates returned by the anonymous Confluence REST API, which is the
+  publication date of the release note rather than a separately-stated release
+  date.
+scheme: semver
+current_version: 6.3.0
+current_version_scope: Desktop PreVeil for Windows
+window: recent releases published 2026-04 through 2026-08
+entries:
+- version: 6.3.0
+  date: '2026-08-16'
+  platform: Windows
+  breaking: unknown
+  url: https://preveil.atlassian.net/wiki/spaces/ESD/pages/5375754281/Desktop+PreVeil+Version+6.3.0+Windows
+- version: 6.2.2
+  date: '2026-08-06'
+  platform: Windows
+  breaking: unknown
+  url: https://preveil.atlassian.net/wiki/spaces/ESD/pages/5349310476/Desktop+PreVeil+Version+6.2.2+Windows
+- version: 6.2.1
+  date: '2026-07-14'
+  platform: Windows
+  breaking: unknown
+  url: https://preveil.atlassian.net/wiki/spaces/ESD/pages/5289017345/Desktop+PreVeil+Version+6.2.1+Windows
+- version: 6.2.0
+  date: '2026-06-29'
+  platform: Windows
+  breaking: unknown
+  url: https://preveil.atlassian.net/wiki/spaces/ESD/pages/5247795202/Desktop+PreVeil+Version+6.2.0+Windows
+- version: 6.0.5
+  date: '2026-06-17'
+  platform: Windows
+  breaking: unknown
+  url: https://preveil.atlassian.net/wiki/spaces/ESD/pages/5213814803/Desktop+PreVeil+Version+6.0.5+Windows
+- version: 6.0.4
+  date: '2026-05-28'
+  platform: Windows
+  breaking: unknown
+  url: https://preveil.atlassian.net/wiki/spaces/ESD/pages/5154963469/Desktop+PreVeil+Version+6.0.4+Windows
+- version: 5.9.5
+  date: '2026-04-20'
+  platform: macOS
+  breaking: unknown
+  url: https://preveil.atlassian.net/wiki/spaces/ESD/pages/5038014466/Mac+Desktop+Release+Version+5.9.5
+- version: 5.8.21
+  date: '2026-04-20'
+  platform: Windows
+  breaking: unknown
+  url: https://preveil.atlassian.net/wiki/spaces/ESD/pages/5037588482/Windows+Desktop+Release+Version+5.8.21
+archive:
+  url: https://preveil.atlassian.net/wiki/spaces/ESD/pages/3066888223/Prior+PreVeil+Versions+Release+Dates
+  note: >-
+    A consolidated prior-versions page exists but was last updated 2024-01-17 and
+    only covers 4.22.0 through 4.25.0; the per-version pages are the live surface.
+evidence:
+- url: https://preveil.atlassian.net/wiki/rest/api/search?cql=space=ESD%20and%20title~%22Version%22
+  status: 200
+- url: https://preveil.atlassian.net/wiki/rest/api/content/5375754281?expand=version,history
+  status: 200

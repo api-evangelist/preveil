@@ -1,0 +1,96 @@
+generated: '2026-08-26'
+method: searched
+source: https://preveil.atlassian.net/wiki/spaces/ESD/pages/2875490305/PreVeil+Drive+Upload+Command+Line+Interface+CLI+Tool
+name: PreVeil Drive Upload Command Line Interface (CLI) Tool
+official: true
+docs: https://preveil.atlassian.net/wiki/spaces/ESD/pages/2875490305/PreVeil+Drive+Upload+Command+Line+Interface+CLI+Tool
+summary: >-
+  A first-party command-line tool that bulk-uploads files and folders into
+  PreVeil Drive collections. It ships inside the PreVeil desktop installation
+  rather than as a separate download, and it talks to the locally installed
+  PreVeil drive daemon — it is not a remote API client.
+binaries:
+- platform: windows
+  binary: preveil_client.exe
+  location: C:\PreVeil\filesync
+  note: >-
+    Must be invoked from a normal (non-admin) Command Prompt; double-clicking
+    the executable does not work, and the executable must be launched once per
+    command.
+- platform: macos
+  binary: client
+  location: /Applications/PreVeil/filesync
+  note: No additional files are needed on macOS; call ./client from Terminal.
+install:
+  method: bundled
+  note: >-
+    Installed with the PreVeil desktop client
+    (https://www.preveil.com/install-latest-release/). No package-manager
+    distribution is published.
+usage: preveil_client.exe [flags] | preveil_client.exe [command]
+commands:
+- name: help
+  description: Help about any command
+- name: upload
+  description: Upload the input folder or file into the user's specified collection
+  usage: preveil_client.exe upload [flags]
+  flags:
+  - flag: -c, --create
+    description: Create target collection if it doesn't exist (default=false)
+  - flag: -d, --dest string
+    description: destination (default=user's default collection)
+  - flag: -h, --help
+    description: Help for upload
+  - flag: --localsync
+    description: Enable local sync for the newly uploaded target (default=false)
+  - flag: --quiet
+    description: Will not show upload progress bars (default=false)
+  - flag: -s, --source string
+    description: source (required)
+  - flag: -u, --user string
+    description: userID (required) — the email address of the PreVeil account
+  - flag: --skipverify
+    description: >-
+      The content integrity of the file is not checked if a file name matches.
+      Only applies to the 6-14-2022 version
+  - flag: --verbose
+    description: >-
+      More detailed logs are produced. Only applies to the 6-14-2022 version.
+global_flags:
+- flag: -h, --help
+  description: help for preveil_client.exe
+- flag: --logdir string
+  description: >-
+    custom log dir location (default
+    "C:\Users\<username>\AppData\Local\PreVeil\drive\logs")
+- flag: --mode string
+  description: PREVEIL_MODE (default "prod")
+- flag: --port string
+  description: port used to specify which drive daemon we are connecting to
+examples:
+- description: Upload to a user's default collection
+  command: .\preveil_client.exe upload -u <preveil_user_id> -s <path_to_file_or_folder>
+- description: Upload to an existing target collection
+  command: .\preveil_client.exe upload -u <preveil_user_id> -s <path_to_file_or_folder> -d <target_collection>
+- description: Upload retaining the source folder structure
+  command: .\preveil_client.exe upload -u <preveil_user_id> -s <path_to_file_or_folder>\* -d <target_collection>
+- description: Create the target collection if it does not exist
+  command: .\preveil_client.exe upload -c -u <preveil_user_id> -s <path_to_file_or_folder> -d <target_collection>
+- description: Hide the upload progress bar
+  command: .\preveil_client.exe upload ... --quiet
+- description: Enable local sync for newly uploaded items
+  command: .\preveil_client.exe upload ... --localsync
+notes:
+- >-
+  The --port global flag names the local PreVeil drive daemon the CLI connects
+  to. That daemon is a machine-local process, not a published network API, and
+  its interface is undocumented.
+- >-
+  PreVeil's guidance is to run the tool from the file server holding the data
+  when migrating from a file server rather than from a user workstation.
+evidence:
+- url: https://preveil.atlassian.net/wiki/spaces/ESD/pages/2875490305/PreVeil+Drive+Upload+Command+Line+Interface+CLI+Tool
+  status: 200
+- url: https://preveil.atlassian.net/wiki/rest/api/content/2875490305?expand=body.storage
+  status: 200
+  note: Confluence REST API answers anonymously; flags and examples read verbatim from body.storage.

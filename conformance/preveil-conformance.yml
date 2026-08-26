@@ -1,0 +1,141 @@
+generated: '2026-08-26'
+method: searched
+source: https://www.preveil.com/new-pricing-page/
+note: >-
+  PreVeil's conformance claims are compliance-regime claims about the service,
+  read from its own pricing, product and legal pages. There is no API contract
+  to assert protocol conformance against — no OpenAPI, no OAuth/OIDC discovery
+  document, no domain API standard — so those entries are recorded as
+  conforms:false with the probe that established it.
+standards:
+- id: cmmc-2.0-level-2
+  name: CMMC 2.0 Level 2
+  conforms: true
+  evidence: >-
+    The Gov Community tier is sold "For organizations in the defense industry to
+    meet CMMC, DFARS 7012, & ITAR compliance"; PreVeil ships a Compliance
+    Accelerator with pre-filled CMMC/NIST 800-171 documentation.
+  source: https://www.preveil.com/cmmc-compliance/
+- id: dfars-252.204-7012
+  name: DFARS 252.204-7012
+  conforms: true
+  evidence: Named on the pricing page and the CMMC compliance page as a supported regime.
+  source: https://www.preveil.com/new-pricing-page/
+- id: nist-sp-800-171
+  name: NIST SP 800-171
+  conforms: true
+  evidence: >-
+    Compliance Accelerator and GRC platform generate SSP/POA&M evidence against
+    the 110 NIST 800-171 controls.
+  source: https://www.preveil.com/product-features/
+- id: itar
+  name: ITAR
+  conforms: true
+  evidence: Named as a supported regime for the Gov Community tier.
+  source: https://www.preveil.com/itar-compliance/
+- id: fedramp-moderate-equivalent
+  name: FedRAMP Moderate equivalent
+  conforms: true
+  evidence: >-
+    Claimed on the pricing page for the Gov Community tier as "FedRAMP Moderate
+    Equivalent" — an equivalency claim, not a FedRAMP authorization in the
+    marketplace. No package ID published.
+  source: https://www.preveil.com/new-pricing-page/
+- id: fips-140-3
+  name: FIPS 140-3 validated cryptography
+  conforms: true
+  evidence: >-
+    Claimed on the pricing page for the Gov Community tier as "FIPS 140-3
+    validated". No CMVP certificate number is published on the public site.
+  source: https://www.preveil.com/new-pricing-page/
+- id: soc-2
+  name: SOC 2
+  conforms: true
+  evidence: >-
+    Listed among the compliance regimes supported by the Business tier. No SOC 2
+    report, auditor or period is published publicly.
+  source: https://www.preveil.com/new-pricing-page/
+- id: hipaa
+  name: HIPAA
+  conforms: true
+  evidence: Named on the pricing page and the healthcare solution page.
+  source: https://www.preveil.com/healthcare/
+- id: gdpr
+  name: GDPR
+  conforms: true
+  evidence: Named in the Data Processing Addendum and enterprise pages.
+  source: https://www.preveil.com/dpa/
+- id: ferpa
+  name: FERPA
+  conforms: true
+  evidence: Listed among Business tier compliance regimes.
+  source: https://www.preveil.com/new-pricing-page/
+- id: glba
+  name: Gramm-Leach-Bliley (GLB)
+  conforms: true
+  evidence: Listed among Business tier compliance regimes.
+  source: https://www.preveil.com/new-pricing-page/
+- id: irs-1075
+  name: IRS safeguards
+  conforms: true
+  evidence: Listed among Business tier compliance regimes as "IRS".
+  source: https://www.preveil.com/new-pricing-page/
+- id: cjis
+  name: CJIS
+  conforms: true
+  evidence: PreVeil publishes a CJIS compliance guide for law enforcement.
+  source: https://www.preveil.com/blog/cjis-compliance-law-enforcement/
+- id: oauth2
+  name: OAuth 2.0
+  conforms: false
+  evidence: >-
+    No /.well-known/oauth-authorization-server on any PreVeil host (404 on
+    www.preveil.com and collections.preveil.com; SPA shell on web.preveil.com).
+    PreVeil's stated authentication model is device-held cryptographic keys with
+    no passwords, not delegated OAuth.
+  source: well-known/preveil-well-known.yml
+- id: oidc
+  name: OpenID Connect
+  conforms: false
+  evidence: No /.well-known/openid-configuration served on any PreVeil host.
+  source: well-known/preveil-well-known.yml
+- id: rfc9457
+  name: RFC 9457 Problem Details
+  conforms: false
+  evidence: No public API contract exists to declare an error format.
+  source: apis.yml
+- id: rfc8594
+  name: RFC 8594 Sunset header
+  conforms: false
+  evidence: No API deprecation policy or Sunset/Deprecation header practice published.
+  source: lifecycle/preveil-lifecycle.yml
+- id: scim
+  name: SCIM
+  conforms: false
+  evidence: >-
+    No SCIM schema URN and no user-provisioning API found; the knowledge base
+    documents bulk user management through the Admin Console UI only.
+  source: https://www.preveil.com/admin-features/
+domain_standards:
+- id: syslog
+  name: Syslog (RFC 5424 family)
+  conforms: true
+  evidence: >-
+    The licensed PreVeil SIEM Connector exports user activity logs "in industry
+    standard syslog format", or converts to another format supported by NXLog,
+    for ingestion by external SIEM platforms. This is the only wire format
+    PreVeil publishes for machine-to-machine consumption of its data.
+  source: https://www.preveil.com/resources/preveil-siem-connector/
+  note: >-
+    Delivered as a self-contained Docker container or virtual machine image and
+    requires a license and hosting agreement, so it is a gated integration
+    surface rather than a public one.
+evidence:
+- url: https://www.preveil.com/new-pricing-page/
+  status: 200
+- url: https://www.preveil.com/resources/preveil-siem-connector/
+  status: 200
+- url: https://www.preveil.com/product-features/
+  status: 200
+- url: https://www.preveil.com/dpa/
+  status: 200

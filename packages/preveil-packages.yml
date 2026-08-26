@@ -1,0 +1,55 @@
+generated: '2026-08-26'
+method: searched
+source: https://github.com/PreVeil
+note: >-
+  PreVeil publishes no client SDK for a public API, because it publishes no
+  public API. The github.com/PreVeil organization holds 46 repositories, all but
+  one of which are forks of third-party dependencies (Elixir, Erlang, Go, Swift
+  and Python libraries) vendored for PreVeil's own build. The one first-party
+  library, pvHelpers, is an internal helper module for the PreVeil daemon and is
+  distributed as a source tarball copied into a vendor repo — it is not
+  published to PyPI or any other registry. No SDKs pointer is emitted: there is
+  nothing here a third-party developer can install to call PreVeil.
+package_count: 1
+packages:
+- name: pvHelpers
+  official: true
+  kind: internal-library
+  language: Python
+  registry: source
+  registry_url: null
+  repository: https://github.com/PreVeil/pvHelpers
+  version: 5.4.4
+  published: null
+  version_source: https://raw.githubusercontent.com/PreVeil/pvHelpers/master/setup.py
+  last_commit: '2026-05-05'
+  note: >-
+    Version read from setup.py in the master branch; there is no registry
+    metadata endpoint to query because the package is not published to PyPI
+    (pypi.org/pypi/pvHelpers/json returns 404), so `published` is null. The
+    repository README documents building it with `python setup.py sdist` and
+    copying the tarball into PreVeil's vendor repo for the daemon build.
+  depends_on_note: >-
+    Pins PreVeil-patched forks (libnacl==1.4.5+preveil1, flanker==0.9.11+preveil1)
+    that are also not on PyPI, which confirms this is an internal distribution.
+registries_checked:
+- registry: PyPI
+  query: https://pypi.org/pypi/pvHelpers/json
+  status: 404
+- registry: PyPI
+  query: https://pypi.org/pypi/preveil/json
+  status: 404
+- registry: npm
+  query: https://registry.npmjs.org/preveil
+  status: 404
+- registry: npm
+  query: https://registry.npmjs.org/-/v1/search?text=preveil
+  status: 200
+  result: no matching first-party package
+evidence:
+- url: https://api.github.com/orgs/PreVeil/repos
+  status: 200
+- url: https://raw.githubusercontent.com/PreVeil/pvHelpers/master/setup.py
+  status: 200
+- url: https://pypi.org/pypi/pvHelpers/json
+  status: 404

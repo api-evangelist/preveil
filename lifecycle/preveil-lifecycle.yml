@@ -1,0 +1,88 @@
+generated: '2026-08-26'
+method: searched
+source: https://www.preveil.com/sla/
+name: PreVeil lifecycle, availability and support commitments
+status_page:
+  url: https://status.preveil.com/
+  platform: Atlassian Statuspage
+  machine_readable:
+  - url: https://status.preveil.com/api/v2/summary.json
+    status: 200
+    note: >-
+      Statuspage v2 JSON API. This is Atlassian's contract, not a PreVeil-authored
+      API, so it is recorded here as a status signal and NOT registered as a
+      PreVeil API or OpenAPI.
+  components:
+  - Backend
+  - Mail
+  - Drive
+  - Admin Console
+  - Web PreVeil
+  - Desktop PreVeil
+  - Mobile Apps
+  - iOS App
+  - Android App
+  - Outlook Add-in
+  - Gmail Plugin
+  - Findersync
+  - Key Menu
+  - Updater/installer
+  - AWS ec2-us-east-1
+sla:
+  url: https://www.preveil.com/sla/
+  availability_target: 99.95%
+  measurement_window: calendar month
+  service_credits:
+  - availability: 99.0% to <99.95%
+    credit: 10% of monthly fee
+  - availability: 98.0% to <99.0%
+    credit: 25% of monthly fee
+  - availability: 95.0% to <98.0%
+    credit: 40% of monthly fee
+  - availability: <95.0%
+    credit: 50% of monthly fee (maximum)
+  chronic_failure: >-
+    Customer may terminate without penalty if the availability target is missed
+    in three of any six consecutive months.
+  exclusions:
+  - customer systems
+  - third-party services
+  - force majeure
+  - customer misuse
+  - scheduled maintenance with advance notice
+support_targets:
+- severity: Sev 1 (Critical)
+  response: 1 hour
+  resolution_target: 4 hours
+- severity: Sev 2 (High)
+  response: 4 hours
+  resolution_target: 1 business day
+- severity: Sev 3 (Normal)
+  response: 8 hours
+  resolution_target: 3 business days
+versioning:
+  scheme: semver
+  current_release: 6.3.0 (Desktop PreVeil for Windows)
+  release_notes: https://preveil.atlassian.net/wiki/spaces/ESD/overview
+  note: >-
+    Versioning is applied to the desktop, mobile and web client builds. There is
+    no public API, so there is no API version scheme.
+deprecation_policy:
+  published: false
+  sunset_header: false
+  deprecation_header: false
+  note: >-
+    No API deprecation policy and no RFC 8594 Sunset/Deprecation header practice
+    is published; PreVeil has no public API. The one end-of-support commitment
+    found is platform support — PreVeil announced it would discontinue support
+    for Windows 10 after Microsoft's 2025-10-14 end-of-life date
+    (https://preveil.atlassian.net/wiki/spaces/ESD/pages/2383511558). No
+    Deprecation pointer is emitted.
+deprecated_operations: []
+evidence:
+- url: https://status.preveil.com/
+  status: 200
+- url: https://status.preveil.com/api/v2/summary.json
+  status: 200
+- url: https://www.preveil.com/sla/
+  status: 200
