@@ -19,6 +19,17 @@ description: >-
   programmatic surface is the first-party PreVeil Drive Upload command-line
   tool and the SIEM Connector.
 url: https://raw.githubusercontent.com/api-evangelist/preveil/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://www.preveil.com/wp-content/uploads/2020/11/logo-preveil.svg
 x-type: company
 x-source: harvest:secondary-market
