@@ -64,5 +64,102 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-PreVeil is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/preveil_stock/
+PreVeil is a Boston-based end-to-end encrypted email and file-sharing platform built for organizations that must protect Controlled Unclassified Information (CUI) and meet CMMC 2.0 Level 2, DFARS 252.204-7012, ITAR, NIST SP 800-171, HIPAA and GDPR obligations. Its architecture removes the central point of compromise: every message and file is encrypted on the endpoint with per-user keys the service never holds, privileged administrative actions require multi-party cryptographic consent through Approval Groups, and there are no passwords to phish. The platform ships PreVeil Drive (encrypted file sharing and sync through Windows Explorer, Mac Finder or a browser), PreVeil Email (which layers onto existing Outlook, Apple Mail and Gmail clients), PreVeil Express for free browser-based external collaboration, an Admin Console with tamper-proof activity logging, e-discovery and device management, a licensed SIEM Connector appliance that exports those logs in syslog format, and a Compliance Accelerator and GRC platform for CMMC documentation. PreVeil publishes no public developer API, SDK or OpenAPI definition; its documented programmatic surface is the first-party PreVeil Drive Upload command-line tool and the SIEM Connector.
+
+**Areas:** Encryption · End-to-End Encryption · Email · File Sharing · Security · Compliance · CMMC · ITAR · CUI · Defense · Cybersecurity · Data Protection
+
+## PreVeil on APIs.io
+
+Everything profiled for PreVeil is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/preveil/](https://apis.io/providers/preveil/)** — or go straight to one of the APIs or properties below.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Preveil Domain Security](https://apis.io/security/preveil/preveil-domain-security/)
+- [Preveil Vulnerability Disclosure](https://apis.io/security/preveil/preveil-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Preveil Plans Pricing](https://apis.io/plans/preveil/preveil-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Preveil Rate Limits](https://apis.io/rate-limits/preveil/preveil-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.preveil.com/)
+- [Documentation](https://preveil.atlassian.net/wiki/spaces/ESD/overview)
+- [Pricing](https://www.preveil.com/new-pricing-page/)
+- [Sign up](https://www.preveil.com/createaccount/)
+- [Support](https://www.preveil.com/support-page/)
+- [Blog](https://www.preveil.com/resources/?resource-type=blog)
+- [Security](https://www.preveil.com/vulnerability-disclosure-policy/)
+- [Terms of service](https://www.preveil.com/terms-of-use/)
+- [Privacy policy](https://www.preveil.com/privacy-policy/)
+- [GitHub](https://github.com/PreVeil)
+- [Status](https://status.preveil.com/)
+
+## API Evangelist rating
+
+**Kin Score 37.3** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 44.7 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 84.2 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 29.4** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/preveil/](https://apis.io/providers/preveil/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for PreVeil: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/preveil/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
